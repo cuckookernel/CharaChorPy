@@ -55,7 +55,7 @@ MAX_SW_NUM = 89
 
 def _main():
     # %%
-    runfile("translate_layout.py")
+    # runfile("translate_layout.py")
     layout_df2 = load_enriched_layout('data/layout-default.csv')
 
     rendered = { km:  draw_layout_for_km(layout_df2, km=km)
@@ -156,3 +156,6 @@ def repr2(repr1: str) -> str:
 
     print(f'Error: {repr(repr1)}')
 # %%
+
+if __name__ == "__main__":
+    _main()
