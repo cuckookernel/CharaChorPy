@@ -1,4 +1,3 @@
-import serial
 from serial import Serial
 
 

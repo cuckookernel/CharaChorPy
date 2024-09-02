@@ -1,7 +1,7 @@
 from pathlib import Path
+
 import pandas as pd
 from pandas import DataFrame
-
 
 SYMBOLS = {
     "SPACE": "␣",
@@ -11,12 +11,12 @@ SYMBOLS = {
     "LEFT_SHIFT": "⇧",
     "LEFT_CTRL": "▵",
     "RIGHT_CTRL": "▵",
-    "LEFT_ALT": "⎇",
+    "LEFT_ALT":  "⎇",
     "RIGHT_ALT": "⎇",
     "LEFT_GUI": "L⃢ ",
     "RIGHT_GUI": "R⃢ ",
-    "DEL": "␡",
-    "ESC": "␛",
+    "DEL":   "␡",
+    "ESC":   "␛",
     "ENTER": "⏎",
     "TAB": "⇥",
     "DUP": "DUP",
@@ -61,7 +61,7 @@ def _main():
     rendered = { km:  draw_layout_for_km(layout_df2, km=km)
                  for km in ['A1', 'A2', 'A3']}
 
-    with open("layouts2.txt", "wt") as f_out:
+    with open("layouts2.txt", "w") as f_out:
         for km, layout in rendered.items():
             print(f"{km}:\n{layout}\n\n", file=f_out)
     # %%
@@ -154,7 +154,7 @@ def repr2(repr1: str) -> str:
     if repr1.endswith('_3D'):
         return SYMBOLS['3D']
 
-    print(f'Error: {repr(repr1)}')
+    print(f'Error: {repr1!r}')
 # %%
 
 if __name__ == "__main__":
